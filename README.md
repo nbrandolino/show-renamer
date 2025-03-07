@@ -12,7 +12,7 @@
    ```
 2. Navigate to the project directory:
    ```bash
-   cd project
+   cd show-renamer
    ```
 3. Install:
    ```bash

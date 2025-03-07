@@ -22,7 +22,7 @@
 ## Usage
 Run the tool using the following command:
 ```bash
-project [OPTIONS]
+show-renamer [OPTIONS]
 ```
 
 ### Available Options

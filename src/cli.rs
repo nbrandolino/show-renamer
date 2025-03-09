@@ -9,10 +9,10 @@ pub fn build_cli() -> clap::Command {
         .about(format!("A helper tool for renaming the seasons and episodes of a tv show"))
         // test flag
         .arg(
-            clap::Arg::new("test")
-                .long("test")
-                .short('t')
-                .help("test flag")
-                .action(clap::ArgAction::SetTrue),
+            clap::Arg::new("rename")
+                .long("rename")
+                .short('r')
+                .help("Renames a TV shows seasons and episodes")
+                .value_parser(clap::value_parser!(String)),
         )
 }

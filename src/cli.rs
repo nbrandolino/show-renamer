@@ -7,12 +7,15 @@ pub fn build_cli() -> clap::Command {
         .version(constants::VERSION)
         .author(constants::AUTHOR)
         .about(format!("A helper tool for renaming the seasons and episodes of a tv show"))
-        // test flag
+        // rename
         .arg(
             clap::Arg::new("rename")
                 .long("rename")
                 .short('r')
-                .help("Renames a TV shows seasons and episodes")
-                .value_parser(clap::value_parser!(String)),
+                .help("Renames a TV show's seasons and episodes at the specified path")
+                .takes_value(true)
+                .value_name("PATH")
+                .value_parser(clap::value_parser!(String))
+                .required(true),
         )
 }

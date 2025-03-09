@@ -14,7 +14,6 @@ pub fn build_cli() -> clap::Command {
                 .short('r')
                 .help("Renames a TV show's seasons and episodes at the specified path")
                 .value_name("PATH")
-                .value_parser(clap::value_parser!(String))
-                .required(true),
+                .value_parser(clap::value_parser!(String)),
         )
 }

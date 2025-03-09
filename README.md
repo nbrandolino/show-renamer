@@ -28,11 +28,12 @@ show-renamer [OPTIONS]
 ### Available Options
 - `-h, --help`: Display help information.
 - `-V, --version`: Display version information.
+- `-r, --rename`: Renames a TV show's seasons and episodes at the specified path.
 
 ### Examples
-1. Display help information:
+1. Rename TV Show:
    ```bash
-   show-renamer -h
+   show-renamer -r <path>
    ```
 
 ## License

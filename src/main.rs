@@ -8,13 +8,8 @@ fn main() {
     utils::check_os();
 
     let matches = cli::build_cli().get_matches();
-    if matches.get_flag("rename") {
-        if let Some(show_path) = matches.get_one::<String>("rename") {
-            rename::main(show_path);
-        }
-        else {
-            eprintln!("Error: No path provided. Use: show-renamer --rename <SHOW_PATH>");
-        }
+    if let Some(show_path) = matches.get_one::<String>("rename") {
+        rename::main(show_path);
     }
     // if no flags are passed display message
     else {

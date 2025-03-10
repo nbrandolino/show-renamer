@@ -31,9 +31,13 @@ show-renamer [OPTIONS]
 - `-r, --rename`:Renames a TV show's seasons and episodes at the specified path. Optionally, rename the entire show directory.
 
 ### Examples
-1. Rename TV Show:
+1. Rename TV show files (seasons and episodes):
    ```bash
-   show-renamer -r <path>
+   show-renamer -r /path/to/show
+   ```
+2. Rename TV show files (seasons and episodes) and show directory:
+   ```bash
+   show-renamer -r /path/to/show 'TV Show'
    ```
 
 ## License

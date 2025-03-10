@@ -2,7 +2,7 @@
 name = "show-renamer"
 version = "0.1.4"
 authors = ["nbrandolino nickbrandolino134@gmail.com"]
-edition = "2024"
+edition = "2021"
 
 [profile.release]
 debug = false

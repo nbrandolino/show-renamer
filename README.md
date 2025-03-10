@@ -28,7 +28,7 @@ show-renamer [OPTIONS]
 ### Available Options
 - `-h, --help`: Display help information.
 - `-V, --version`: Display version information.
-- `-r, --rename`: Renames a TV show's seasons and episodes at the specified path.
+- `-r, --rename`:Renames a TV show's seasons and episodes at the specified path. Optionally, rename the entire show directory.
 
 ### Examples
 1. Rename TV Show:

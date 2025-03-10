@@ -1,16 +1,42 @@
 use std::fs;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use std::ffi::OsStr;
 
 // main function
-pub fn main(show_path: &str) {
+pub fn main(show_path: &str, new_name: Option<&str>) {
     let show_dir = Path::new(show_path);
     if !show_dir.is_dir() {
         eprintln!("Error: Provided path is not a directory");
         return;
     }
 
-    rename_seasons(show_dir);
+    let show_dir = if let Some(new_name) = new_name {
+        match rename_show_directory(show_dir, new_name) {
+            Ok(new_path) => new_path,
+            Err(err) => {
+                eprintln!("Error: {}", err);
+                return;
+            }
+        }
+    } else {
+        show_dir.to_path_buf()
+    };
+
+    rename_seasons(&show_dir);
+}
+
+// rename entire show
+fn rename_show_directory(show_dir: &Path, new_name: &str) -> Result<PathBuf, String> {
+    let parent_dir = show_dir
+        .parent()
+        .ok_or("Failed to get parent directory".to_string())?;
+    let new_show_path = parent_dir.join(new_name);
+
+    fs::rename(show_dir, &new_show_path)
+        .map_err(|err| format!("Failed to rename show directory: {}", err))?;
+
+    println!("Renamed show directory to {}", new_name);
+    Ok(new_show_path)
 }
 
 // rename seasons

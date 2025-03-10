@@ -35,7 +35,6 @@ fn rename_show_directory(show_dir: &Path, new_name: &str) -> Result<PathBuf, Str
     fs::rename(show_dir, &new_show_path)
         .map_err(|err| format!("Failed to rename show directory: {}", err))?;
 
-    println!("Renamed show directory to {}", new_name);
     Ok(new_show_path)
 }
 

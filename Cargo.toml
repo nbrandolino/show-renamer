@@ -3,8 +3,17 @@ name = "show-renamer"
 version = "0.1.4"
 authors = ["nbrandolino nickbrandolino134@gmail.com"]
 description = "A command-line utility written in Rust, designed to rename the Seasons and Episodes of a TV show."
-license = "GPL"
+license = "GPL-3.0-or-later"
 edition = "2021"
+
+[package.metadata.rpm]
+package = "show-renamer"
+
+[package.metadata.rpm.cargo]
+buildflags = ["--release"]
+
+[package.metadata.rpm.targets]
+show-renamer = { path = "/usr/bin/show-renamer" }
 
 [profile.release]
 debug = false

@@ -2,6 +2,8 @@
 name = "show-renamer"
 version = "0.1.4"
 authors = ["nbrandolino nickbrandolino134@gmail.com"]
+description = "A command-line utility written in Rust, designed to rename the Seasons and Episodes of a TV show."
+license = "GPL"
 edition = "2021"
 
 [profile.release]
@@ -20,7 +22,6 @@ lto = "off"
 opt-level = 0
 overflow-checks = true
 panic = "unwind"
-split-debuginfo = "..."
 
 [dependencies]
 clap = "4.5"
